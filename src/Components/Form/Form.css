@@ -1,0 +1,6 @@
+.error {
+  color: hsl(360, 67%, 44%);
+  text-transform: capitalize;
+  padding-top: 0.5rem;
+  letter-spacing: 0.1rem;
+}
