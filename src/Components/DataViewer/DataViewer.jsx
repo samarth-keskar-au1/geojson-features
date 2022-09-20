@@ -6,7 +6,7 @@ import Details from "../Details/Details";
 import "./DataViewer.css";
 
 const DataViewer = () => {
-  const { data } = useGlobalContext();
+  const { data, isLoading } = useGlobalContext();
   const [modalData, setModalData] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -52,6 +52,7 @@ const DataViewer = () => {
           columns={columns}
           dataSource={data?.features}
           rowKey="id"
+          loading={isLoading}
         />
         {isModalOpen && (
           <Details

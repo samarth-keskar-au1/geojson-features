@@ -4,14 +4,13 @@ import axios from "axios";
 const API_ENDPOINT = `https://www.openstreetmap.org/api/0.6/map`;
 
 const useFetchOsmData = (cords) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
   const [data, setData] = useState(null);
   const fetchOsmData = async (url) => {
     try {
       let response = await axios.get(url);
       response = osmtogeojson(response.data);
-      console.log(response);
       setIsLoading(false);
       setData(response);
     } catch (error) {
